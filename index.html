@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text To Unicode Converter</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+        <em id="dmodeButton">Dark Mode Off</em>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Text to Unicode Converter</h1>
+      <input type="text" id="input" placeholder="Enter text here" />
+      <button class="btn" id="convert">
+        <i class="fas fa-cog"></i> Convert
+      </button>
+      <button class="btn" id="copy">
+        <i class="fa-solid fa-copy"></i> Copy
+      </button>
+      <p class="output" id="output"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
