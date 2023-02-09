@@ -27,8 +27,8 @@ function afterCopy() {
     copyBtn.innerHTML = " <i class=\"fa fa-check\"></i> Copied!";
 }
 
-function afterConvert() {
-    convertBtn.innerHTML = "<i class=\"fas fa-cog fa-spin\"></i> Convert"
+function startConvert() {
+    convertBtn.innerHTML = "<i class=\"fa-solid fa-cog fa-spin\"></i> Convert"
     let text = input.value;
     let unicode = "";
     for (let i = 0; i < text.length; i++) {
@@ -37,7 +37,23 @@ function afterConvert() {
     output.innerHTML = unicode;
 }
 
+function convert(event)
+{
+    if(event.key == "Enter")
+    {
+        event.preventDefault();
+        startConvert();
+    }
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'c') {
+      afterCopy();
+    }
+  });
+
 //Btn Event Listeners
-convertBtn.addEventListener("click", afterConvert);
+convertBtn.addEventListener("click", startConvert);
 copyBtn.addEventListener("click", afterCopy);
 toggleSwitch.addEventListener('change', switchTheme);
+input.addEventListener('keypress', convert);
